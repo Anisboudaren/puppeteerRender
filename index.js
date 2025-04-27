@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json()); // For parsing application/json
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 4000;
-
+const sentEmails = new Set();
 app.get("/scrape", (req, res) => {
   scrapeLogic(res);
 });
